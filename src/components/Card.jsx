@@ -1,7 +1,8 @@
 import React from "react";
 
 export const Card = (props) => {
-  console.log(props);
+  const upperCase = props.item.location.toUpperCase();
+
   return (
     <div className="card-container">
       <div className="img-container">
@@ -10,7 +11,7 @@ export const Card = (props) => {
       <div className="info-container">
         <div className="loc-info">
           <img className="loc-img" src="/src/images/location.com.png" alt="" />
-          <h4 className="location">{props.item.location}</h4>
+          <h4 className="location">{upperCase}</h4>
           <a href={props.item.googleMapsUrl}>View on Google Maps!</a>
         </div>
         <h3 className="card-title">{props.item.title}</h3>
