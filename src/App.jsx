@@ -1,7 +1,21 @@
-import "./App.css";
+import { Card } from "./components/Card";
+import { Header } from "./components/Header";
+import data from "./data";
 
 function App() {
-  return <div className="App"></div>;
+  const cards = data.map((item) => (
+    <>
+      <Card key={item.id} item={item} />
+      <hr className="card__line" />
+    </>
+  ));
+
+  return (
+    <div className="App">
+      <Header />
+      {cards}
+    </div>
+  );
 }
 
 export default App;
